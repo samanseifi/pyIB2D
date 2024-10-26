@@ -22,9 +22,7 @@ class Grid:
         """
         for j1 in range(self.config.grid_size):
             x = j1 * self.config.h
-            self.velocity_field[j1, :, 1] = np.sin(
-                2 * np.pi * x / self.config.length
-            )
+            self.velocity_field[j1, :, 1] = np.sin(2 * np.pi * x / self.config.length)
 
     def compute_vorticity(self):
         """
@@ -38,10 +36,6 @@ class Grid:
         ip = self.config.ip
         im = self.config.im
         h = self.config.h
-        vorticity = (
-            self.velocity_field[ip, :, 1]
-            - self.velocity_field[im, :, 1]
-            - self.velocity_field[:, ip, 0]
-            + self.velocity_field[:, im, 0]
-        ) / (2 * h)
+        vorticity = (self.velocity_field[ip, :, 1] - self.velocity_field[im, :, 1] - self.velocity_field[:, ip, 0] + self.velocity_field[:, im, 0]) / (2 * h)
+        
         return vorticity

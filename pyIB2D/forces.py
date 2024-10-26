@@ -24,12 +24,9 @@ class ForceCalculator:
         km = self.config.km
         K = self.config.K
         positions = self.markers.positions
-        elastic_force = (
-            K
-            * (positions[kp, :] + positions[km, :] - 2 * positions)
-            / (dtheta ** 2)
-        )
-
+        
+        elastic_force = K * (positions[kp, :] + positions[km, :] - 2 * positions) / (dtheta ** 2)
+    
         if current_step >= self.config.cut_step >= 0:
             cut_marker = self.config.cut_marker
             elastic_force[cut_marker, :] = 0
@@ -52,6 +49,7 @@ class ForceCalculator:
         Kb = self.config.Kb
         positions = self.markers.positions
         curvature_term = positions[kp, :] - 2 * positions + positions[km, :]
+        
         bending_force = Kb * curvature_term / (dtheta ** 4)
 
         if current_step >= self.config.cut_step >= 0:
@@ -66,4 +64,5 @@ class ForceCalculator:
         """
         elastic = self.compute_elastic_forces(current_step)
         bending = self.compute_bending_forces(current_step)
+        
         return elastic + bending

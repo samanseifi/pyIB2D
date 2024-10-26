@@ -37,9 +37,7 @@ class ImmersedBoundarySimulator:
             # Compute forces at the intermediate marker positions
             self.markers.positions = marker_intermediate  # Temporarily update positions
             forces = self.force_calculator.total_forces(clock)
-            self.markers.positions -= (
-                self.config.dt / 2
-            ) * marker_velocity  # Revert positions
+            self.markers.positions -= (self.config.dt / 2) * marker_velocity  # Revert positions
 
             # Spread forces onto the grid
             forces_on_grid = self.interpolator.spread_forces_to_grid(forces)

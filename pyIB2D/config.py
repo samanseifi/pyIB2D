@@ -6,18 +6,7 @@ class SimulationConfig:
     Configuration parameters for the simulation.
     """
 
-    def __init__(
-        self,
-        length=1.0,
-        grid_size=64,
-        boundary_markers=None,
-        rho=1.0,
-        mu=0.01,
-        tmax=4.0,
-        dt=0.01,
-        cut_marker=-1,
-        cut_step=-1,
-    ):
+    def __init__(self, length=1.0, grid_size=64, boundary_markers=None, rho=1.0, mu=0.01, tmax=4.0, dt=0.01, cut_marker=-1, cut_step=-1,):
         self.length = length
         self.grid_size = grid_size
         self.h = length / grid_size

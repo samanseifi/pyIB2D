@@ -17,9 +17,5 @@ class BoundaryMarkers:
         """
         for k in range(self.config.num_boundary_markers):
             theta = k * self.config.dtheta
-            self.positions[k, 0] = (self.config.length / 2) + (
-                self.config.length / 4
-            ) * np.cos(theta)
-            self.positions[k, 1] = (self.config.length / 2) + (
-                self.config.length / 4
-            ) * np.sin(theta)
+            self.positions[k, 0] = (self.config.length / 2) + (self.config.length / 4) * np.cos(theta)
+            self.positions[k, 1] = (self.config.length / 2) + (self.config.length / 4) * np.sin(theta)
