@@ -1,3 +1,5 @@
+![CI/CD Pipeline](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci-cd-pipeline.yml/badge.svg)
+
 # Immersed Boundary Simulation
 
 A Python code for simulating 2D immersed boundary problems using the semi-implicit solver for fluid solver
