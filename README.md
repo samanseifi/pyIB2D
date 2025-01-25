@@ -1,4 +1,4 @@
-![CI/CD Pipeline](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci-cd-pipeline.yml/badge.svg)
+![CI/CD Pipeline](https://github.com/samanseifi/pyIB2D/actions/workflows/ci-cd-pipeline.yml/badge.svg)
 
 # Immersed Boundary Simulation
 
