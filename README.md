@@ -1,6 +1,8 @@
 # Immersed Boundary Simulation
 
-A Python package for simulating 2D immersed boundary problems using the immersed boundary method.
+A Python code for simulating 2D immersed boundary problems using the semi-implicit solver for fluid solver
+
+![Vorticity Evolution](vorticity_evolution.gif)
 
 ## Features
 

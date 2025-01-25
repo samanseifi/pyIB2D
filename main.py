@@ -10,7 +10,7 @@ def run_immersed_boundary_simulation():
         boundary_markers=None,
         rho=1.0,
         mu=0.1,
-        tmax=4,
+        tmax=0.8,
         dt=0.001,
         cut_marker=-1,
         cut_step=-1,
