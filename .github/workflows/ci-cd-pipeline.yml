@@ -21,34 +21,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'  # Change to your project's Python version
+          python-version: '3.11'  # Change this to match your Python version
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Ensure you have a requirements file
+          pip install -r requirements.txt  # Ensure you have dependencies listed
 
-      - name: Run Tests
+      - name: Run Unit Tests with unittest
         run: |
-          pytest tests/ --junitxml=report.xml  # Use appropriate test framework
-
-      - name: Upload Test Results
+          python -m unittest discover -s tests -p "*.py"
+      
+      - name: Upload Test Results (if needed)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: report.xml
-
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'  # Deploy only from main branch
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Deploy Application
-        run: |
-          echo "Deploying application..."
-          # Add your deployment commands here, e.g., uploading files, running scripts
+          path: tests/
